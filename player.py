@@ -26,9 +26,9 @@ class Player(pygame.sprite.Sprite):
             self.direction.y = 0
 
         if keys[pygame.K_RIGHT]:
-            self.direction.x  = 1
+            self.direction.x = 1
         elif keys[pygame.K_LEFT]:
-            self.direction.x  = -1
+            self.direction.x = -1
         else:
             self.direction.x = 0
 
@@ -52,7 +52,7 @@ class Player(pygame.sprite.Sprite):
                         self.hitbox.left = sprite.hitbox.right
         if direction =='vertical':
             for sprite in self.obstacle_sprites:
-                if sprite.hitbox.colliderect(self.rect):
+                if sprite.hitbox.colliderect(self.hitbox):
                     if self.direction.y < 0:
                         self.hitbox.top = sprite.hitbox.bottom
                     if self.direction.y > 0:
